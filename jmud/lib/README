@@ -1,0 +1,14 @@
+My advice:
+  Put all the .el files in a directory ~/emacs/jmud
+  Put the fragment-of-.emacs in your ~/.emacs file somewhere
+  Put the world-file in ~/.jmud_worlds
+
+You might not like all of the stuff, particularly the part about where to put
+the .el files--if you choose another location, fix the references to
+it in the .emacs fragment.  (There are two.)
+
+So if you do that, then M-x j-mud-load will get the files in memory.
+(If you use jmud enough, you might want to put (j-mud-load) at the end
+of your .emacs)  And then C-c m will get you a connection, and 
+C-u C-c m will autologin (if you set up a world file with your name
+and password in it).

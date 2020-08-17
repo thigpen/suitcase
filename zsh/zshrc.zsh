@@ -128,7 +128,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-MY_SUITCASE_ZSH_THEME=${MY_SUITCASE_ZSH_PLUGINS}/scm/github/powerlevel10k/powerlevel10k.zsh-theme
+MY_SUITCASE_ZSH_THEME=${MY_SUITCASE_ZSH_PLUGINS}/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f $MY_SUITCASE_ZSH_THEME ]] || source $MY_SUITCASE_ZSH_THEME
 
 # To recreate and customize prompt, run `p10k configure` => ~/.p10k.zsh

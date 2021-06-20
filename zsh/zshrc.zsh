@@ -104,7 +104,8 @@ foreach config (
     zstyle \
     private/aliases \
     private/functions \
-    private/variables 
+    private/variables \
+    utils/sap
 )
 do
     file="${MY_SUITCASE_ZSH_HOME}/configs/${config}.zsh"

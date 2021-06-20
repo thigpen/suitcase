@@ -1479,7 +1479,7 @@
   }
 
   function prompt_my_cpu_temp () {
-  	cpu_temp=`/usr/local/bin/osx-cpu-temp`
+  	cpu_temp=`osx-cpu-temp -F`
     integer int_cpu_temp=`echo ${cpu_temp} | awk -F '\.' {'print $1'}`
   	if ((int_cpu_temp >= 100 )); then
   		p10k segment -s HOT -f red -t "${cpu_temp}"

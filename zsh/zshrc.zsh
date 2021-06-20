@@ -24,6 +24,7 @@ MY_SUITCASE_BREW_GNU_INSTALL=/usr/local/opt/coreutils/libexec/gnubin
 # Import by adding directory to FPATH before the compinit command
 
 # From HomeBrew ...
+eval "$(/opt/homebrew/bin/brew shellenv)"
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions/:$FPATH
     FPATH=$(brew --prefix)/share/zsh-completions/:$FPATH

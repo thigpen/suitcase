@@ -11,6 +11,8 @@ RPS1=$'%B<%b %D{%a %b/%e/%G %H:%M:%S} %B>%b'
 
 PATH=$HOME/bin:$PATH
 
+# For Kapeli Dash app ...
+export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/"
 
 
 ################################################################################

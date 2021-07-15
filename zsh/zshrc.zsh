@@ -15,6 +15,43 @@ MY_SUITCASE_ZSH_PLUGINS=${MY_SUITCASE_ZSH_HOME}/plugins/scm/github
 MY_SUITCASE_BREW_GNU_INSTALL=/usr/local/opt/coreutils/libexec/gnubin
 
 ###############################################################################
+
+#rm -f ~/.zcompdump
+autoload -Uz compinit
+compinit
+
+###############################################################################
+#
+# Import configurations ...
+#
+###############################################################################
+
+# TODO: env 
+# Files in private should be ignored by git
+foreach config (
+    aliases \
+    functions \
+    options \
+    variables \
+    zstyle \
+    private/aliases \
+    private/functions \
+    private/variables \
+    utils/sap
+)
+do
+    file="${MY_SUITCASE_ZSH_HOME}/configs/${config}.zsh"
+
+    if [ ! -e "$file" ]; then
+         echo -e "** WARNING **  zsh config could not find your $file\a"
+    elif [ ! -r "$file" ]; then
+    	echo -e "** WARNING **  zsh config could not read your $file:\a"
+    else
+     	source $file
+    fi
+done
+
+###############################################################################
 #
 # Completions ...
 #
@@ -35,12 +72,12 @@ if type docker &>/dev/null; then
     FPATH=${MY_SUITCASE_ZSH_PLUGINS}/docker/:$FPATH
 fi
 
+# From Python ...
+dir_target=${HOME}/Library/Python/3.9/bin
+[ -d $dir_target ] && FPATH=$dir_target:$FPATH
+
 # For AWS Assume Role ...
 [[ -d ${MY_SUITCASE_ZSH_PLUGINS}/assume-role ]] || FPATH=${MY_SUITCASE_ZSH_PLUGINS}/assume-role:$FPATH
-
-rm -f ~/.zcompdump
-autoload -Uz compinit
-compinit
 
 
 ###############################################################################
@@ -53,7 +90,7 @@ compinit
 #------------------------------------------------------------------------------
 # > pip3 install awscli --upgrade --user
 # This should be sourced after compinit above
-source $(which aws_zsh_completer.sh)
+source ${HOME}/Library/Python/3.9/bin/aws_zsh_completer.sh
 
 # K ...
 #------------------------------------------------------------------------------
@@ -88,37 +125,6 @@ source ${MY_SUITCASE_ZSH_PLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 #    Use sparingly, unless you like all the added aliases.
 
 source ${MY_SUITCASE_ZSH_PLUGINS}/oh-my-zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
-
-###############################################################################
-#
-# Import configurations ...
-#
-###############################################################################
-
-# TODO: env 
-# Files in private should be ignored by git
-foreach config (
-    aliases \
-    functions \
-    options \
-    variables \
-    zstyle \
-    private/aliases \
-    private/functions \
-    private/variables \
-    utils/sap
-)
-do
-    file="${MY_SUITCASE_ZSH_HOME}/configs/${config}.zsh"
-
-    if [ ! -e "$file" ]; then
-         echo -e "** WARNING **  zsh config could not find your $file\a"
-    elif [ ! -r "$file" ]; then
-    	echo -e "** WARNING **  zsh config could not read your $file:\a"
-    else
-     	source $file
-    fi
-done
 
 ###############################################################################
 #

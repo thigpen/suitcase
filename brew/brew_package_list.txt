@@ -31,3 +31,6 @@ readline
 terraform
 tmux
 tree
+yamllint
+argocd
+weaveworks/tap/eksctl

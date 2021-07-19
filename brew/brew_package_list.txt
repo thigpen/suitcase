@@ -28,9 +28,11 @@ nmap
 npm
 osx-cpu-temp
 readline
+ruby
 terraform
 tmux
 tree
 yamllint
+helm
 argocd
 weaveworks/tap/eksctl

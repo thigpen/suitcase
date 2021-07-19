@@ -60,8 +60,13 @@ done
 # Import completion files which are denoted by a "_" prefix ...
 # Import by adding directory to FPATH before the compinit command
 
-# From HomeBrew ...
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# From HomeBrew ... (Monterey or Big Sur)
+if [ -d /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -d /usr/local/homebrew/bin/brew ]; then
+    eval "$(/usr/local/homebrew/bin/brew shellenv)"
+fi
+       
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions/:$FPATH
     FPATH=$(brew --prefix)/share/zsh-completions/:$FPATH
@@ -90,7 +95,11 @@ dir_target=${HOME}/Library/Python/3.9/bin
 #------------------------------------------------------------------------------
 # > pip3 install awscli --upgrade --user
 # This should be sourced after compinit above
-source ${HOME}/Library/Python/3.9/bin/aws_zsh_completer.sh
+if [ -f ${HOME}/Library/Python/3.9/bin/aws_zsh_completer.sh ]; then
+    source ${HOME}/Library/Python/3.9/bin/aws_zsh_completer.sh
+elif [ -f /usr/local/bin/aws_zsh_completer.sh ]; then
+    source /usr/local/bin/aws_zsh_completer.sh
+fi
 
 # K ...
 #------------------------------------------------------------------------------

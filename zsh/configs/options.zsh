@@ -1699,3 +1699,5 @@ setopt EMACS
 #        -s     Used by set to sort positional parameters
 #
 ################################################################################
+
+setopt INTERACTIVE_COMMENTS

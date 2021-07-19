@@ -14,6 +14,8 @@ PATH=$HOME/bin:$PATH
 # For Kapeli Dash app ...
 export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/"
 
+# TODO: Temp hack to STILL support python2 and pip ...
+PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
 
 ################################################################################
 #
@@ -69,6 +71,9 @@ fi
 #-------------------------------------------------------------------------------
 [ -d /opt/homebrew/opt/ruby/bin ]            && PATH=/opt/homebrew/opt/ruby/bin:$PATH
 [ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ] && PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
+
+# TODO: From brew
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Terraform ...

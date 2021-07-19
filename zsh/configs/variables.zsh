@@ -67,9 +67,8 @@ fi
 #-------------------------------------------------------------------------------
 # Ruby ...
 #-------------------------------------------------------------------------------
-if type ruby &>/dev/null; then
-
-fi
+[ -d /opt/homebrew/opt/ruby/bin ]            && PATH=/opt/homebrew/opt/ruby/bin:$PATH
+[ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ] && PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 
 #-------------------------------------------------------------------------------
 # Terraform ...

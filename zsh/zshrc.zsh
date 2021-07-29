@@ -12,7 +12,11 @@ MY_SUITCASE_ZSH_HOME=${HOME}/suitcase/zsh
 MY_SUITCASE_ZSH_PLUGINS=${MY_SUITCASE_ZSH_HOME}/plugins/scm/github
 
 # GNU utilities (brew install coreutils) ...
-MY_SUITCASE_BREW_GNU_INSTALL=/usr/local/opt/coreutils/libexec/gnubin
+if [[ $OSTYPE = darwin21* ]]; then
+    MY_SUITCASE_BREW_GNU_INSTALL=/opt/homebrew/opt/coreutils/libexec/gnubin
+else
+    MY_SUITCASE_BREW_GNU_INSTALL=/usr/local/opt/coreutils/libexec/gnubin
+fi
 
 ###############################################################################
 

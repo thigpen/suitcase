@@ -36,3 +36,4 @@ yamllint
 helm
 argocd
 weaveworks/tap/eksctl
+cli53

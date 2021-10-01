@@ -40,7 +40,7 @@ done
 #
 # GNU ...
 
-[[ -d $MY_SUITCASE_BREW_GNU_INSTALL ]] && PATH=$MY_SUITCASE_BREW_GNU_INSTALL:$PATH
+[[ -d $MY_SUITCASE_BREW_GNU_BIN ]] && PATH=$MY_SUITCASE_BREW_GNU_BIN:$PATH
 
 ################################################################################
 #

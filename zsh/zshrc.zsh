@@ -47,7 +47,7 @@ fi
 
 # From docker ...
 if type docker &>/dev/null; then
-    FPATH=${MY_SUITCASE_ZSH_PLUGINS}/docker/:$FPATH
+    FPATH=${MY_SUITCASE_ZSH_HOME}/plugins/scm/docker/:$FPATH
 fi
 
 # From Python ...

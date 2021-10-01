@@ -14,12 +14,6 @@ MY_SUITCASE_ZSH_PLUGINS=${MY_SUITCASE_ZSH_HOME}/plugins/scm/github
 MY_BREW_HOME=/opt/homebrew
 
 ###############################################################################
-
-#rm -f ~/.zcompdump
-autoload -Uz compinit
-compinit
-
-###############################################################################
 #
 # Completions ...
 #
@@ -56,6 +50,12 @@ dir_target=${HOME}/Library/Python/3.9/bin
 
 # For AWS Assume Role ...
 [[ -d ${MY_SUITCASE_ZSH_PLUGINS}/assume-role ]] || FPATH=${MY_SUITCASE_ZSH_PLUGINS}/assume-role:$FPATH
+
+###############################################################################
+
+#rm -f ~/.zcompdump
+autoload -Uz compinit
+compinit
 
 ###############################################################################
 #

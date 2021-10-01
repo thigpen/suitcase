@@ -40,3 +40,4 @@ helm
 argocd
 weaveworks/tap/eksctl
 cli53
+aws-iam-authenticator

@@ -15,7 +15,7 @@ PATH=$HOME/bin:$PATH
 export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/"
 
 # TODO: Temp hack to STILL support python2 and pip ...
-PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
+#PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
 
 ################################################################################
 #

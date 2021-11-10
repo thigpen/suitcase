@@ -73,7 +73,7 @@ fi
 [ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ] && PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 
 # TODO: From brew
-export PATH=/opt/homebrew/bin/:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 #-------------------------------------------------------------------------------

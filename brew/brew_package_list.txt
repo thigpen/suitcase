@@ -21,6 +21,7 @@ go
 groovy
 htop
 httpie
+hyperkit
 jfrog-cli-go
 jq
 mtr

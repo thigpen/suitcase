@@ -102,6 +102,12 @@ if type terraform &>/dev/null; then
     DOCKER_SLEEP='/bin/sh -c "while true; do sleep 10; done"'
 fi
 
+#-------------------------------------------------------------------------------
+# OpenJDK ...
+#-------------------------------------------------------------------------------
+[ -d /usr/local/opt/openjdk@11/bin ] && PATH=/usr/local/opt/openjdk@11/bin:$PATH
+
+
 ################################################################################
 #
 # Setup operating systems ...

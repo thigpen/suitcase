@@ -24,6 +24,7 @@ httpie
 hyperkit
 jfrog-cli-go
 jq
+kubectx
 minikube
 mtr
 nmap

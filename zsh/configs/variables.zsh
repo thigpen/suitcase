@@ -72,10 +72,10 @@ fi
 [ -d /opt/homebrew/opt/ruby/bin ]            && PATH=/opt/homebrew/opt/ruby/bin:$PATH
 [ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ] && PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 
-# TODO: From brew
-export PATH=/opt/homebrew/bin:$PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+[ -d /usr/local/opt/ruby/bin ]               && PATH=/usr/local/opt/ruby/bin:$PATH
 
+# TODO: From brew
+[ -d /opt/homebrew/bin ]                     && PATH=/opt/homebrew/bin:$PATH
 #-------------------------------------------------------------------------------
 # Terraform ...
 #-------------------------------------------------------------------------------

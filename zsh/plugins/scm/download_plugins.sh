@@ -7,7 +7,7 @@ mkdir -p $DISTRIB_DIR
 cd $DISTRIB_DIR
 
 repos="https://github.com/weizard/assume-role.git \
-    https://github.com/zdharma/fast-syntax-highlighting.git \
+    https://github.com/zdharma-continuum/fast-syntax-highlighting \
     https://github.com/supercrabtree/k \
     https://github.com/robbyrussell/oh-my-zsh \
     https://github.com/romkatv/powerlevel10k.git \

@@ -29,5 +29,5 @@ function sap() {
 }
 
 
-compctl -K _aws_profiles gimme-aws-creds sap
+compctl -K _aws_profiles xaws sap
 

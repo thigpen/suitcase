@@ -42,3 +42,4 @@ weaveworks/tap/eksctl
 cli53
 aws-iam-authenticator
 wget
+libyaml

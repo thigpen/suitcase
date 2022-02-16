@@ -9,6 +9,7 @@ Zsh
 Zsh-autosuggestions
 Zsh-completions
 a2ps
+akamai
 aws-sam-cli
 c7n
 cfn-lint

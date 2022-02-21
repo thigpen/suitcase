@@ -19,7 +19,7 @@ export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/
 
 ################################################################################
 #
-# Setup private software tree called /soft ...
+# Setup private software tree called ~/soft ...
 #
 ################################################################################
 
@@ -31,7 +31,7 @@ export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/
 
 ARCH=$(arch)
 
-for dir_target in /soft/arch/${ARCH}/bin /soft/share/bin /soft/homemade/bin
+for dir_target in ~/soft/arch/${ARCH}/bin ~/soft/share/bin ~/soft/homemade/bin
 do
     [ -d $dir_target ] && PATH=$dir_target:$PATH
 done

@@ -39,6 +39,7 @@ osx-cpu-temp
 readline
 ruby
 terraform
+terragrunt
 tmux
 tree
 weaveworks/tap/eksctl

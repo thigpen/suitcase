@@ -28,6 +28,7 @@ htop
 httpie
 hyperkit
 jfrog-cli-go
+jsonlint
 jq
 kubectx
 libyaml
@@ -38,7 +39,7 @@ npm
 osx-cpu-temp
 readline
 ruby
-terraform
+hashicorp/tap/terraform
 terragrunt
 tmux
 tree

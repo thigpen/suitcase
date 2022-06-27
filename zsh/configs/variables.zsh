@@ -42,6 +42,13 @@ done
 
 [[ -d $MY_SUITCASE_BREW_GNU_BIN ]] && PATH=$MY_SUITCASE_BREW_GNU_BIN:$PATH
 
+###############################################################################
+#
+# KUBECONFIG ...
+
+[[ -d ~/.kube/config ]] && KUBECONFIG=$KUBECONFIG:~/.kube/config
+
+
 ################################################################################
 #
 # Setup language frameworks ...

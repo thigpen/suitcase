@@ -8,9 +8,9 @@ function _aws_profiles() {
   reply=($(aws_profiles))
 }
 
-function sap() {
+function set-aws-profile-and-creds() {
   if [[ -z "$1" ]]; then
-    unset AWS_DEFAULT_PROFILE AWS_PROFILE AWS_EB_PROFILE
+    unset AWS_DEFAULT_PROFILE AWS_PROFILE AWS_EB_PROFILE AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
     echo AWS profile cleared.
     return
   else
@@ -23,13 +23,24 @@ function sap() {
     fi
   fi
 
-  xaws $1  # Sourced from ~/.gimme-aws-creds-xaws
-           # via https://github.sie.sony.com/sie/gimme-aws-creds
+  if [ $OKTA ]; then
+    xaws $1  # Sourced from ~/.gimme-aws-creds-xaws
+             # via https://github.sie.sony.com/sie/gimme-aws-creds
+  else
+    local aws_profile=$1
+    profile_data=$(cat ~/.aws/credentials | grep "\[$aws_profile\]" -A4)   # Weakness: assumes block of 4 lines ...
+    AWS_ACCESS_KEY_ID="$(echo $profile_data | grep aws_access_key_id | cut -f2 -d'=' | tr -d ' ')"
+    AWS_SECRET_ACCESS_KEY="$(echo $profile_data | grep aws_secret_access_key | cut -f2 -d'=' | tr -d ' ')"
+    #set -x
+    export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    #set +x
+  fi
   
   export AWS_DEFAULT_PROFILE=$1
   export AWS_PROFILE=$1
   export AWS_EB_PROFILE=$1
 }
 
-compctl -K _aws_profiles xaws sap
+compctl -K _aws_profiles xaws set-aws-profile-and-creds
 

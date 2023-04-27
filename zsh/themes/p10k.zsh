@@ -114,7 +114,7 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # example               # example user-defined segment (see prompt_example function below)
-    #time                    # current time
+    time                    # current time
     )
 
   # To enable default icons for all segments, don't define POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION

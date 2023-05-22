@@ -34,6 +34,7 @@ kubectx
 libyaml
 minikube
 mtr
+nginx
 nmap
 npm
 osx-cpu-temp

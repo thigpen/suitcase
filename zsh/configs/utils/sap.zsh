@@ -23,8 +23,8 @@ function sap() {
     fi
   fi
 
-  xaws $1  # Sourced from ~/.gimme-aws-creds-xaws
-           # via https://github.sie.sony.com/sie/gimme-aws-creds
+  xaws Aloy # Sourced from ~/.gimme-aws-creds-xaws
+            # via https://github.sie.sony.com/sie/gimme-aws-creds
   
   export AWS_DEFAULT_PROFILE=$1
   export AWS_PROFILE=$1

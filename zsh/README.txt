@@ -13,7 +13,8 @@ Preferences > Profile > +
 
 4) Download plugins from both HomeBrew and GIT
 
-> ./plugins/scm/download_plugins.sh
+> cd plugins/scm
+> ./download_plugins.sh
 
 5) Install some HomeBrew packages
 

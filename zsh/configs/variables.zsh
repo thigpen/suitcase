@@ -11,6 +11,8 @@ RPS1=$'%B<%b %D{%a %b/%e/%G %H:%M:%S} %B>%b'
 
 PATH=$HOME/bin:$PATH
 
+AKAMAI_PRAGMA_HEADERS="Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-extracted-values, akamai-x-get-ssl-client-session-id, akamai-x-get-true-cache-key, akamai-x-serial-no, akamai-x-get-request-id,akamai-x-get-nonces,akamai-x-get-client-ip,akamai-x-feo-trace"
+
 # For Kapeli Dash app ...
 export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/"
 

@@ -95,4 +95,6 @@ alias my-set-tty-del='stty erase "^?"'
 
 alias my-show-256-color='for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"'
 
+alias my-dw=/Applications/DeltaWalker/DeltaWalker.app/Contents/MacOS/DeltaWalker
+
 ###############################################################################

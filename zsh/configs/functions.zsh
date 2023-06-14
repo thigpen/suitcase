@@ -63,3 +63,12 @@ function mzf_showIp() {
 }
 
 ###############################################################################
+
+function my-non-docker-desktop()
+{
+    minikube start
+    eval $(minikube docker-env)
+    echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+}
+
+################################################################################

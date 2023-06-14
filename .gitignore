@@ -1,6 +1,7 @@
 jmud/private/*
 zsh/configs/private/*
 zsh/plugins/scm/github/*
+zsh/plugins/scm/docker/*
 *~
 .DS_STORE
 *.ttf

@@ -7,53 +7,11 @@
 ###############################################################################
 
 # Where did you git clone as ...
-MY_SUITCASE_ZSH_HOME=${HOME}/suitcase/zsh
-
+MY_SUITCASE_ZSH_HOME=${HOME}/scm/git/personal/suitcase/zsh
 MY_SUITCASE_ZSH_PLUGINS=${MY_SUITCASE_ZSH_HOME}/plugins/scm/github
 
-# GNU utilities (brew install coreutils) ...
-if [[ $OSTYPE = darwin21* ]]; then
-    MY_SUITCASE_BREW_GNU_INSTALL=/opt/homebrew/opt/coreutils/libexec/gnubin
-else
-    MY_SUITCASE_BREW_GNU_INSTALL=/usr/local/opt/coreutils/libexec/gnubin
-fi
-
-###############################################################################
-
-#rm -f ~/.zcompdump
-autoload -Uz compinit
-compinit
-
-###############################################################################
-#
-# Import configurations ...
-#
-###############################################################################
-
-# TODO: env 
-# Files in private should be ignored by git
-foreach config (
-    aliases \
-    functions \
-    options \
-    variables \
-    zstyle \
-    private/aliases \
-    private/functions \
-    private/variables \
-    utils/sap
-)
-do
-    file="${MY_SUITCASE_ZSH_HOME}/configs/${config}.zsh"
-
-    if [ ! -e "$file" ]; then
-         echo -e "** WARNING **  zsh config could not find your $file\a"
-    elif [ ! -r "$file" ]; then
-    	echo -e "** WARNING **  zsh config could not read your $file:\a"
-    else
-     	source $file
-    fi
-done
+# Where is Home Brew ...
+MY_BREW_HOME=/opt/homebrew
 
 ###############################################################################
 #
@@ -64,21 +22,26 @@ done
 # Import completion files which are denoted by a "_" prefix ...
 # Import by adding directory to FPATH before the compinit command
 
-# From HomeBrew ... (Monterey or Big Sur)
-if [ -d /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -d /usr/local/homebrew/bin/brew ]; then
-    eval "$(/usr/local/homebrew/bin/brew shellenv)"
-fi
-       
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions/:$FPATH
-    FPATH=$(brew --prefix)/share/zsh-completions/:$FPATH
+# From HomeBrew ...
+if [ -e "${MY_BREW_HOME}/bin/brew" ]; then
+
+    # Sets HOMEBREW_PREFIX + others ...
+    eval "$(${MY_BREW_HOME}/bin/brew shellenv)"
+
+    #FPATH=$(brew --prefix)/share/zsh/site-functions/:$FPATH
+    FPATH=${HOMEBREW_PREFIX}/share/zsh/site-functions/:$FPATH
+    FPATH=${HOMEBEW_PREFIX}/share/zsh-completions/:$FPATH
+
+    # GNU utilities (brew install coreutils) ...
+    if [ -d ${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin ]; then
+	MY_SUITCASE_BREW_GNU_BIN=${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin
+	# See configs/variables.sh for PATH=
+    fi
 fi
 
 # From docker ...
 if type docker &>/dev/null; then
-    FPATH=${MY_SUITCASE_ZSH_PLUGINS}/docker/:$FPATH
+    FPATH=${MY_SUITCASE_ZSH_HOME}/plugins/scm/docker/:$FPATH
 fi
 
 # From Python ...
@@ -88,6 +51,11 @@ dir_target=${HOME}/Library/Python/3.9/bin
 # For AWS Assume Role ...
 [[ -d ${MY_SUITCASE_ZSH_PLUGINS}/assume-role ]] || FPATH=${MY_SUITCASE_ZSH_PLUGINS}/assume-role:$FPATH
 
+###############################################################################
+
+#rm -f ~/.zcompdump
+autoload -Uz compinit
+compinit
 
 ###############################################################################
 #
@@ -141,6 +109,37 @@ source ${MY_SUITCASE_ZSH_PLUGINS}/oh-my-zsh/plugins/colored-man-pages/colored-ma
 
 ###############################################################################
 #
+# Import configurations ...
+#
+###############################################################################
+
+# TODO: env
+# Files in private should be ignored by git
+foreach config (
+    aliases \
+    functions \
+    options \
+    variables \
+    zstyle \
+    private/aliases \
+    private/functions \
+    private/variables \
+    utils/sap
+)
+do
+    file="${MY_SUITCASE_ZSH_HOME}/configs/${config}.zsh"
+
+    if [ ! -e "$file" ]; then
+        echo -e "** WARNING **  zsh config could not find your $file\a"
+    elif [ ! -r "$file" ]; then
+        echo -e "** WARNING **  zsh config could not read your $file:\a"
+    else
+        source $file
+    fi
+done
+
+###############################################################################
+#
 # Add theme ...
 #
 ###############################################################################
@@ -157,3 +156,5 @@ MY_SUITCASE_ZSH_THEME_CONFIG=${MY_SUITCASE_ZSH_HOME}/themes/p10k.zsh
 [[ ! -f $MY_SUITCASE_ZSH_THEME_CONFIG ]] || source $MY_SUITCASE_ZSH_THEME_CONFIG
 
 ###############################################################################
+
+source /Users/HHughes/.gimme-aws-creds-xaws

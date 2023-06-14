@@ -11,15 +11,17 @@ RPS1=$'%B<%b %D{%a %b/%e/%G %H:%M:%S} %B>%b'
 
 PATH=$HOME/bin:$PATH
 
+AKAMAI_PRAGMA_HEADERS="Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-extracted-values, akamai-x-get-ssl-client-session-id, akamai-x-get-true-cache-key, akamai-x-serial-no, akamai-x-get-request-id,akamai-x-get-nonces,akamai-x-get-client-ip,akamai-x-feo-trace"
+
 # For Kapeli Dash app ...
 export MANPATH="${MANPATH}:${HOME}/workbench/soft/share/linux-man/usr/share/man/"
 
 # TODO: Temp hack to STILL support python2 and pip ...
-PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
+#PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
 
 ################################################################################
 #
-# Setup private software tree called /soft ...
+# Setup private software tree called ~/soft ...
 #
 ################################################################################
 
@@ -31,7 +33,7 @@ PATH=$PATH:/Users/hhughes/Library/Python/2.7/bin
 
 ARCH=$(arch)
 
-for dir_target in /soft/arch/${ARCH}/bin /soft/share/bin /soft/homemade/bin
+for dir_target in ~/soft/arch/${ARCH}/bin ~/soft/share/bin ~/soft/homemade/bin
 do
     [ -d $dir_target ] && PATH=$dir_target:$PATH
 done
@@ -40,7 +42,14 @@ done
 #
 # GNU ...
 
-[[ -d $MY_SUITCASE_BREW_GNU_INSTALL ]] && PATH=$MY_SUITCASE_BREW_GNU_INSTALL:$PATH
+[[ -d $MY_SUITCASE_BREW_GNU_BIN ]] && PATH=$MY_SUITCASE_BREW_GNU_BIN:$PATH
+
+###############################################################################
+#
+# KUBECONFIG ...
+
+[[ -d ~/.kube/config ]] && KUBECONFIG=$KUBECONFIG:~/.kube/config
+
 
 ################################################################################
 #
@@ -72,10 +81,10 @@ fi
 [ -d /opt/homebrew/opt/ruby/bin ]            && PATH=/opt/homebrew/opt/ruby/bin:$PATH
 [ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ] && PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 
-# TODO: From brew
-export PATH=/opt/homebrew/bin/:$PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+[ -d /usr/local/opt/ruby/bin ]               && PATH=/usr/local/opt/ruby/bin:$PATH
 
+# TODO: From brew
+[ -d /opt/homebrew/bin ]                     && PATH=/opt/homebrew/bin:$PATH
 #-------------------------------------------------------------------------------
 # Terraform ...
 #-------------------------------------------------------------------------------
@@ -101,6 +110,12 @@ fi
 if type terraform &>/dev/null; then
     DOCKER_SLEEP='/bin/sh -c "while true; do sleep 10; done"'
 fi
+
+#-------------------------------------------------------------------------------
+# OpenJDK ...
+#-------------------------------------------------------------------------------
+[ -d /usr/local/opt/openjdk@11/bin ] && PATH=/usr/local/opt/openjdk@11/bin:$PATH
+
 
 ################################################################################
 #

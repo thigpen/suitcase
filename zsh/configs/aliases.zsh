@@ -50,35 +50,32 @@ fi
 
 ###############################################################################
 
-if [[ -d $MY_SUITCASE_BREW_GNU_INSTALL ]];
+if [[ ! -z $MY_SUITCASE_BREW_GNU_BIN ]] && [[ -d $MY_SUITCASE_BREW_GNU_BIN ]];
 then
     # Alias GNU versions 
 
     alias grep='grep --color'
     alias less='less -Xr'
 
-    alias ls='$MY_SUITCASE_BREW_GNU_INSTALL/ls -F --color'
+    alias ls='ls -F --color'
 
-    alias my-rable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.R)"
-    alias my-nrable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.^R)"
-    alias my-wable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.W)"
-    alias my-nwable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.^W)"
-    alias my-xable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.X)"
-    alias my-nxable="$MY_SUITCASE_BREW_GNU_INSTALL/ls -AFtrd *(.^X)"
+    alias my-rable="ls -AFtrd *(.R)"
+    alias my-nrable="ls -AFtrd *(.^R)"
+    alias my-wable="ls -AFtrd *(.W)"
+    alias my-nwable="ls -AFtrd *(.^W)"
+    alias my-xable="ls -AFtrd *(.X)"
+    alias my-nxable="ls -AFtrd *(.^X)"
 
-    alias my-sort-ip='$MY_SUITCASE_BREW_GNU_INSTALL/sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4'    
+    alias my-sort-ip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4'
 
 fi
-
 
 alias mv='mv -i'
 alias rm='rm -i'
 
 alias dus='du -sckx * | sort -nr'
-alias bkdir='cd $OLDPWD'
+#alias bkdir='cd $OLDPWD'
 alias \?='history -fDd'
-alias u=uptime
-alias d='dirs -v'
 
 
 alias my-git-log="git log -n 15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

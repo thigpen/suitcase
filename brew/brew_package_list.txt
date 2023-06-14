@@ -9,9 +9,11 @@ Zsh
 Zsh-autosuggestions
 Zsh-completions
 a2ps
+aws-iam-authenticator
 aws-sam-cli
 c7n
 cfn-lint
+cli53
 coreutils
 cowsay
 emacs
@@ -36,5 +38,3 @@ yamllint
 helm
 argocd
 weaveworks/tap/eksctl
-cli53
-aws-iam-authenticator

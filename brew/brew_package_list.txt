@@ -37,6 +37,7 @@ mtr
 nginx
 nmap
 npm
+openjdk@11
 osx-cpu-temp
 readline
 ruby

@@ -13,6 +13,7 @@ akamai
 argocd
 aws-iam-authenticator
 aws-sam-cli
+bash
 c7n
 cfn-lint
 cli53

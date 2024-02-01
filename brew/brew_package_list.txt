@@ -10,6 +10,7 @@ Zsh-autosuggestions
 Zsh-completions
 a2ps
 akamai
+apache-httpd
 argocd
 aws-iam-authenticator
 aws-sam-cli
@@ -28,6 +29,7 @@ helm
 htop
 httpie
 hyperkit
+jenkins-lts
 jfrog-cli-go
 jsonlint
 jq
@@ -40,6 +42,7 @@ nmap
 npm
 openjdk@11
 osx-cpu-temp
+php
 readline
 ruby
 hashicorp/tap/terraform

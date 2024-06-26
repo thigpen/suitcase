@@ -157,4 +157,4 @@ MY_SUITCASE_ZSH_THEME_CONFIG=${MY_SUITCASE_ZSH_HOME}/themes/p10k.zsh
 
 ###############################################################################
 
-source /Users/HHughes/.gimme-aws-creds-xaws
+[[ ! -f /Users/HHughes/.gimme-aws-creds-xaws ]] || source ~/.gimme-aws-creds-xaws

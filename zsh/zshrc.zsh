@@ -7,7 +7,7 @@
 ###############################################################################
 
 # Where did you git clone as ...
-MY_SUITCASE_ZSH_HOME=${HOME}/scm/git/personal/suitcase/zsh
+MY_SUITCASE_ZSH_HOME=${HOME}/WorkBench/scm/git/personal/suitcase/zsh
 MY_SUITCASE_ZSH_PLUGINS=${MY_SUITCASE_ZSH_HOME}/plugins/scm/github
 
 # Where is Home Brew ...
@@ -157,4 +157,4 @@ MY_SUITCASE_ZSH_THEME_CONFIG=${MY_SUITCASE_ZSH_HOME}/themes/p10k.zsh
 
 ###############################################################################
 
-[[ ! -f /Users/HHughes/.gimme-aws-creds-xaws ]] || source ~/.gimme-aws-creds-xaws
+[[ ! -f ~/.gimme-aws-creds-xaws ]] || source ~/.gimme-aws-creds-xaws

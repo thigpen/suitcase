@@ -105,16 +105,17 @@
 #    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     load                    # CPU load (from Line #1 above)
     disk_usage              # disk usage
-    my_cpu_temp             # CPU temperature
+#    my_cpu_temp             # CPU temperature
     wifi                    # wifi speed
+    time                    # current time
     # =========================[ Line #2 ]=========================
-    newline                 # \n
+#    newline                 # \n
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # example               # example user-defined segment (see prompt_example function below)
-    time                    # current time
+    # time                    # current time 
     )
 
   # To enable default icons for all segments, don't define POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION

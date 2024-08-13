@@ -46,6 +46,13 @@ done
 
 ###############################################################################
 #
+# JDK ...
+[[ -d /opt/homebrew/Cellar/openjdk@11/11.0.24/libexec/openjdk.jdk/Contents/Home/ ]] \
+    && export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.24/libexec/openjdk.jdk/Contents/Home/ \
+    && PATH=$JAVA_HOME/bin:$PATH
+
+###############################################################################
+#
 # KUBECONFIG ...
 
 [[ -d ~/.kube/config ]] && KUBECONFIG=$KUBECONFIG:~/.kube/config

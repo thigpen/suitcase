@@ -51,6 +51,7 @@ hashicorp/tap/terraform
 terragrunt
 tmux
 tree
+uv
 weaveworks/tap/eksctl
 wget
 yamllint

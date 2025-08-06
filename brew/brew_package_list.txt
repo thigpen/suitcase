@@ -45,6 +45,7 @@ openjdk@17
 openjdk@21
 osx-cpu-temp
 php
+podman
 readline
 ruby
 hashicorp/tap/terraform

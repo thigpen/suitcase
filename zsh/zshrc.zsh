@@ -53,6 +53,10 @@ dir_target=${HOME}/Library/Python/3.9/bin
 
 ###############################################################################
 
+# Treat '/' as a word separator for backward deletion
+autoload -U select-word-style
+select-word-style bash
+
 #rm -f ~/.zcompdump
 autoload -Uz compinit
 compinit
@@ -158,3 +162,8 @@ MY_SUITCASE_ZSH_THEME_CONFIG=${MY_SUITCASE_ZSH_HOME}/themes/p10k.zsh
 ###############################################################################
 
 [[ ! -f ~/.gimme-aws-creds-xaws ]] || source ~/.gimme-aws-creds-xaws
+
+source /Users/HHughes/.gimme-aws-creds-xaws
+
+# Added by setup-claude-pfb.sh
+export PATH="$HOME/bin:$PATH"

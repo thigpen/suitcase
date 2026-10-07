@@ -48,6 +48,7 @@ php
 podman
 readline
 ruby
+rust
 hashicorp/tap/terraform
 terragrunt
 tmux

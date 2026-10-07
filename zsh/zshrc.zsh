@@ -161,9 +161,6 @@ MY_SUITCASE_ZSH_THEME_CONFIG=${MY_SUITCASE_ZSH_HOME}/themes/p10k.zsh
 
 ###############################################################################
 
-[[ ! -f ~/.gimme-aws-creds-xaws ]] || source ~/.gimme-aws-creds-xaws
+# Work 
+[[ -f ~/.gimme-aws-creds-xaws ]] && source ~/.gimme-aws-creds-xaws
 
-source /Users/HHughes/.gimme-aws-creds-xaws
-
-# Added by setup-claude-pfb.sh
-export PATH="$HOME/bin:$PATH"
